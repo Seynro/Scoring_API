@@ -1,0 +1,14 @@
+# Название вашего пайплайна
+stages:
+  - test
+
+# Настройки для этапа "test"
+test:
+  stage: test
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    # Сборка и запуск контейнера для тестирования
+    - docker build -t my_api_project .
+
