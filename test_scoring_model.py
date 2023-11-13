@@ -9,7 +9,7 @@ class test_verification(unittest.TestCase):
 
     def test_request(self):
         param =     [{"PIN_CODE": "1234567",
-                    "TX_FID": 1234678901,
+                    "UNICAL_CODE": 1234678901,
                     "APP_ID": "{AaBb123456789CcDddEefq1}"}]
         response = requests.post("http://127.0.0.1:8000/scoring", json=param)
 

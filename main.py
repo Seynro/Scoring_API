@@ -12,7 +12,7 @@ app = FastAPI(
 
 class Param(BaseModel):
     PIN_CODE: str
-    TX_FID: int
+    UNICAL_CODE: int
     APP_ID: str
 
 
@@ -20,7 +20,7 @@ class Param(BaseModel):
 def scoring(param: list[Param]):
     result = scoring_func(param)
     print(result)
-    if result == 'APP_ID' or result == 'TX_FID' or result == 'PIN_CODE':
+    if result == 'APP_ID' or result == 'UNICAL_CODE' or result == 'PIN_CODE':
         error = result + ' is invalid'
         return {"status": 404, "score": error}
     else:
